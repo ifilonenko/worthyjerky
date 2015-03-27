@@ -313,15 +313,13 @@ p {
     overflow: hidden;
     position: relative;
 }
-.backgroundsize .hero {
-    background: #323033 url("http://www.fiftythree.com/assets/images/pencil/hero-narrow@1.5x.jpg") no-repeat 33% 50%;
-    -webkit-background-size: auto 380px;
-    -moz-background-size: auto 380px;
-    background-size: auto 380px;
-    height: 380px;
+.hero {
+    background: #323033 url("") no-repeat 50% 50%;
+    -webkit-background-size: auto 750px;
+    -moz-background-size: auto 750px;
+    background-size: auto 750px;
+    height: 750px;
 }
-.no-backgroundsize .hero {
-    background: #323033 url("http://www.fiftythree.com/assets/images/pencil/hero-narrow.jpg") no-repeat 50% 50%}
 .hero .intro {
     display: block;
     font-size: 0;
@@ -476,7 +474,7 @@ p {
     margin: 0 0 0 30px;
 }
 .hero-header .video-anchor {
-    margin-top: 160px;
+    margin-top: 80px;
 }
 .hero-header .title {
     width: 100%}
@@ -2130,7 +2128,7 @@ a.sdk-img {
     text-align: center;
     vertical-align: top;
 }
-.order-section .section-description {
+.order-section .description {
     color: #eb5e28;
     font-size: 1.25em;
     -webkit-transition: color 0.3s ease;
@@ -2159,6 +2157,7 @@ a.sdk-img {
 .order-section .product {
     color: #403d39;
     height: 240px;
+    padding-top:-40px;
     text-align: center;
     vertical-align: top;
 }
