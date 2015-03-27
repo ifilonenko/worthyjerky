@@ -438,15 +438,12 @@ p {
     .hero {
     height: 750px;
 }
-.backgroundsize .hero {
-    background: #323033 url("http://www.fiftythree.com/assets/images/pencil/hero@1.5x.jpg") no-repeat 50%;
+.hero {
+    background: #323033 url("http://www.fiftythree.com/assets/images/pencil/hero@1.5x.jpg") no-repeat 50% 50%;
     -webkit-background-size: auto 750px;
     -moz-background-size: auto 750px;
     background-size: auto 750px;
     height: 750px;
-}
-.no-backgroundsize .hero {
-    background-image: url("http://www.fiftythree.com/assets/images/pencil/hero.jpg");
 }
 .hero .intro {
     display: block;
