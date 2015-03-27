@@ -439,7 +439,7 @@ p {
     height: 750px;
 }
 .beginning {
-    
+
     background: #323033 url("http://www.fiftythree.com/assets/images/pencil/hero@1.5x.jpg") no-repeat 50% 50%;
     -webkit-background-size: auto 750px;
     -moz-background-size: auto 750px;
@@ -860,15 +860,12 @@ p {
     margin-left: 13.75%;
 }
 }
-.cssgradients .craft-section {
+.craft-section {
     background: -webkit-linear-gradient(top,  #1a1817,  #2d2b28 20%,  #2d2b28 68%,  #23221f);
     background: -moz-linear-gradient(top,  #1a1817,  #2d2b28 20%,  #2d2b28 68%,  #23221f);
     background: -o-linear-gradient(top,  #1a1817,  #2d2b28 20%,  #2d2b28 68%,  #23221f);
     background: -ms-linear-gradient(top,  #1a1817,  #2d2b28 20%,  #2d2b28 68%,  #23221f);
     background: linear-gradient(to bottom,  #1a1817,  #2d2b28 20%,  #2d2b28 68%,  #23221f);
-}
-.no-cssgradients .craft-section {
-    background-color: #2d2b28;
 }
 .craft-section .copy {
     text-align: center;
