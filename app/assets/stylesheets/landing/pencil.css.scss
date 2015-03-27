@@ -314,7 +314,7 @@ p {
     position: relative;
 }
 .hero {
-    background: #323033 url("") no-repeat 50% 50%;
+    background: #323033 no-repeat 50% 50%;
     -webkit-background-size: auto 750px;
     -moz-background-size: auto 750px;
     background-size: auto 750px;
@@ -500,18 +500,19 @@ p {
     background-repeat: no-repeat;
     color: #66625b;
 }
-.backgroundsize .expression-section {
-    background-image: url("http://www.fiftythree.com/assets/images/pencil/expression.jpg");
-    -webkit-background-size: 480px auto;
-    -moz-background-size: 480px auto;
-    background-size: 480px auto;
-    padding-top: 250px;
+.expression-section {
+  // background-image: url("https://cornell.app.box.com/representation/file_version_8065161300/image_2048/1.png");
+  -webkit-background-size: 800px auto;
+  -moz-background-size: 800px auto;
+  background-size: 800px auto;
+  padding-top: 550px;
 }
 .expression-section .wrapper {
     display: block;
     font-size: 0;
     margin-left: -5%;
     margin-right: -5%;
+    margin-top:100px;
     width: 110%}
 .expression-section .copy {
     display: inline-block;
@@ -1232,14 +1233,11 @@ p {
     margin-left: 5%;
     margin-right: 5%;
     width: 90%}
-.walnut-material-section {
-    background: #170904 url("http://www.fiftythree.com/assets/images/pencil/material-walnut@1.5x.jpg") no-repeat 75% 30%;
-    -webkit-background-size: auto 750px;
-    -moz-background-size: auto 750px;
-    background-size: auto 750px;
-}
-.no-backgroundsize .walnut-material-section {
-    background-image: url("http://www.fiftythree.com/assets/images/pencil/material-walnut.jpg");
+.first-type {
+    background: #170904 url("https://cornell.app.box.com/representation/file_version_12047597446/image_2048_jpg/1.jpg") no-repeat 50% 50%;
+    -webkit-background-size: auto 100px;
+    -moz-background-size: auto 100px;
+    background-size: auto 100px;
 }
 .graphite-material-section {
     background: #0f0f0d url("http://www.fiftythree.com/assets/images/pencil/material-graphite@1.5x.jpg") no-repeat 25% 50%;
@@ -2354,7 +2352,7 @@ a.sdk-img {
     font-size: 16px;
     margin-left: 1.6666666666666667%;
     margin-right: 1.6666666666666667%;
-    width: 30%}
+    width: 22.5%}
 .banner-section .banner-item {
     background-position: 80% 50%;
     margin-top: 0;
@@ -2370,16 +2368,11 @@ a.sdk-img {
 .banner-section .word {
     display: block;
 }
-/*@media screen and (min-width:75em) {
-    .banner-section .banner-item: first-child, .banner-section .banner-item:nth-child(2), .banner-section .banner-item:last-child {
-    display: inline-block;
-    font-size: 16px;
-    margin-left: 1.25%;
-    margin-right: 1.25%;
-    width: 22.5%*/
+
 .banner-section .banner-item:first-child {
     margin-left: 13.75%;
 }
 .banner-section .banner-item:last-child {
-    margin-right: 13.75%}
+    margin-right: 13.75%;
+}
 }
