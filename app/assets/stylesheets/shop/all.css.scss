@@ -433,23 +433,23 @@ footer.page-footer.fixed-grid .footer-container  {
 
 footer.page-footer.fixed-grid .footer-container:before,  footer.page-footer.fixed-grid .footer-container:after  {
      content:  "";
-     display:  table }
+     display:  table; }
 footer.page-footer.fixed-grid .footer-container:after  {
-     clear:  both }
+     clear:  both; }
 footer.page-footer .logo-wrapper  {
      display:  inline-block;
      font-size:  16px;
      margin-left:  5%;
      margin-right:  5%;
      width:  90%;
-     vertical-align:  top }
+     vertical-align:top; }
 footer.page-footer .logo  {
      width:  82px;
      height:  82px;
      padding-bottom:  40px }
 footer.page-footer ul  {
      margin:  0;
-     padding:  0 }
+     padding:  0; }
 footer.page-footer .links  {
      display:  inline-block;
      font-size:  16px;
@@ -836,21 +836,19 @@ html,  body  {
      font-family:  'AvenirNextLTW01-Regular',  Helvetica,  Arial,  sans-serif;
      line-height:  1.2em;
      color:  #403d39;
-     -webkit-tap-highlight-color:  rgba(0,  0,  0,  0) }
-body,  div,  table,  section,  article,  aside,  p,  span  {
-     font-size:  18px;
-     vertical-align:  top }
+     -webkit-tap-highlight-color:  rgba(0,  0,  0,  0); 
+     vertical-align:  top; }
 body.modal-open  {
      overflow:  hidden }
 h1,  h2,  h3,  h4,  h5,  h6  {
      font-family:  'Avenir Next LT W01 Bold',  Helvetica,  Arial,  sans-serif;
      line-height:  1.3em }
 h1  {
-     font-size:  46px !important }
+     font-size:  46px  }
 h2  {
-     font-size:  26px !important }
+     font-size:  26px  }
 h3  {
-     font-size:  20px !important }
+     font-size:  20px  }
 strong  {
      font-family:  'Avenir Next LT W01 Bold',  Helvetica,  Arial,  sans-serif;
  }

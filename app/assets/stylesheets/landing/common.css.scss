@@ -268,6 +268,7 @@ header.page-header nav {
     width: 100%;
 }
 header.page-header nav ul {
+    vertical-align:middle;
     float: none;
     list-style-type: none;
     margin: 0;
@@ -495,6 +496,9 @@ header.page-header nav li.get-paper, header.page-header nav.expanded li.get-pape
     margin-left: -1.25%;
     margin-right: -1.25%;
     width: 102.5%}
+.navigation-list{
+    vertical-align:middle !important;
+}
 header.page-header .logo-wrapper {
     display: inline-block;
     font-size: 16px;
@@ -504,6 +508,7 @@ header.page-header .logo-wrapper {
     margin-left: 13.75%;
 }
 header.page-header nav {
+    vertical-align: middle;
     display: inline-block;
     font-size: 16px;
     margin-left: 1.25%;
