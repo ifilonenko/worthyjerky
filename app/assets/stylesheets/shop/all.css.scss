@@ -60,6 +60,7 @@ html,  body  {
      margin:  0;
      padding:  0 }
 header.page-header  {
+     z-index:1;
      -webkit-box-sizing:  border-box;
      -moz-box-sizing:  border-box;
      box-sizing:  border-box;
@@ -1110,10 +1111,15 @@ button:hover,  button:focus,  button:active  {
      background-color:  #66625b }
 .btn a,  .btn a:hover  {
      font-family:  'Avenir Next LT W01 Demi',  Helvetica,  Arial,  sans-serif;
+     cursor:pointer;
      color:  #f1eae0 }
 .btn.primary  {
+     margin-left:64%;
      color:  #ffc0a4;
      background-color:  #eb5e28;
+     &:hover{
+          cursor:pointer;
+     }
  }
 
 .btn.primary:hover  {
@@ -1482,7 +1488,25 @@ body > article h1  {
 section.extras  {
      padding-bottom:  150px;
  }
-
+@media screen and (min-width:37.5em) {
+  .article-inner{ height:100%;}
+  .carousel { height: 785px; top: 100px; }
+  .carousel .slide { height: 785px; background-position: 42% top; -webkit-background-size: 2500px 785px; -moz-background-size: 2500px 785px; background-size: 2500px 785px }
+  .carousel-controls { top: 800px }
+  article.product { z-index:2; overflow:hidden; padding-bottom: 0; }
+  article.product .row .carousel-gestures { display: inline-block; font-size: 18px; margin-left: 2.5%; margin-right: 2.5%; width: 95%; height: 500px }
+  article.product .row .carousel-gestures img{ padding-top:300px;}
+  article.product .row aside { display: inline-block; font-size: 18px; margin-left: 2.5%; margin-right: 2.5%; width: 95%; margin-top: 200px; }
+  article.product .row aside hr { margin: 20px 0 }
+}
+@media screen and (min-width:56.25em) {
+  .article-inner{ margin-top:-300px;}
+  .carousel .slide { background-position: center center }
+  article.product { z-index:2; max-height: 697px; overflow: hidden; }
+  article.product .row .carousel-gestures { display: inline-block; font-size: 18px; margin-left: 1.666666666666667%; margin-right: 1.666666666666667%; width: 63.333333333333336%; height: 585px }
+  article.product .row aside { display: inline-block; font-size: 18px; margin-left: 1.666666666666667%; margin-right: 1.666666666666667%; width: 30%; margin-top: -300px; }
+  article.product .row aside h1 { margin: 0 0 5px 0 }
+}
 article.product ~ section.extras  {
      padding-top:  80px }
 section.extras h2  {
@@ -2117,6 +2141,7 @@ article.product .row aside hr  {
 article.product .row aside hr:last-of-type  {
      margin-bottom:  15px }
 article.product .row aside .form-wrapper  {
+     margin-top:-8em;
      position:  relative;
      height:  150px;
  }
@@ -2308,25 +2333,35 @@ article.product .row aside .notes-wrapper .notes p a  {
      color:  #eb5e28;
  }
 
-article.product .row aside .notes-wrapper .notes p a:hover  {
-     color:  #b33c12 }
-article.product .row aside a.swatch  {
+article.product .row aside button.swatch  {
      position:  relative;
      float:  left;
      margin:  10px 10px 25px -7px;
-     background:  transparent url("//cdn.shopify.com/s/files/1/0245/8513/t/7/assets/swatch_rings.png?6268") 0 0 no-repeat;
-     -webkit-background-size:  192px 64px;
-     -moz-background-size:  192px 64px;
-     background-size:  192px 64px;
-     width:  50px;
-     height:  50px;
+     border:none;
+     border-radius:50%;
+     width:  100px;
+     height:  100px;
+     background:transparent;
      padding:  7px;
+     img{
+       border-radius:50%;
+       margin: 0;
+       padding: 0;
+       border: 0;
+       outline: 0;
+       font-weight: inherit;
+       font-style: inherit;
+       font-family: inherit;
+       font-size: 100%;
+       vertical-align: baseline;
+       width:100%;
+       height:100%;
+       &:hover{
+          cursor:pointer;
+       }
+     }
  }
 
-article.product .row aside a.swatch:hover,  article.product .row aside a.swatch.hover  {
-     background-position:  -64px 0 }
-article.product .row aside a.swatch.active  {
-     background-position:  -128px 0 }
 @media screen and (min-width:37.5em)  {
     
   .carousel  {
@@ -4334,4 +4369,7 @@ article.form-support aside.seals div  {
      display:  table }
   body.dialog-print .print-only .inner-print:after  {
      clear:  both }
+}
+article.product{
+     overflow:hidden;
 }
