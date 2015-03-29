@@ -1,6 +1,6 @@
 Popup = React.createClass
   render: ->
     React.DOM.p
-      children: 'Hi bob'
+      children: 'Hi mom'
 
 React.renderComponent(Popup(), document.getElementById('react'))
