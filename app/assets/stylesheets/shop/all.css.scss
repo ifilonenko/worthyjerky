@@ -1105,7 +1105,45 @@ button:hover,  button:focus,  button:active  {
      color:  #f1eae0;
      background-color:  #a49e93;
  }
-
+.button:hover,  .button:focus,  .button:active  {
+     outline:  none !important }
+.button.primary  {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  font-family: 'Avenir Next LT W01 Demi', Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  padding: 0 18px;
+  -webkit-border-radius: 25px;
+  border-radius: 25px;
+  margin: 0;
+  height: 50px;
+  outline: none;
+  cursor: default;
+  outline: none !important;
+  -webkit-transition-property: background-color;
+  -moz-transition-property: background-color;
+  -o-transition-property: background-color;
+  -ms-transition-property: background-color;
+  transition-property: background-color;
+  -webkit-transition-duration: 300ms;
+  -moz-transition-duration: 300ms;
+  -o-transition-duration: 300ms;
+  -ms-transition-duration: 300ms;
+  transition-duration: 300ms;
+  -webkit-transition-timing-function: ease;
+  -moz-transition-timing-function: ease;
+  -o-transition-timing-function: ease;
+  -ms-transition-timing-function: ease;
+  transition-timing-function: ease;
+  margin-left:64%;
+  color:  #ffc0a4;
+  background-color:  #eb5e28;
+  &:hover{
+     cursor:pointer;
+  }  
+ }
 .btn.secondary:hover  {
      color:  #f1eae0;
      background-color:  #66625b }
@@ -4372,4 +4410,7 @@ article.form-support aside.seals div  {
 }
 article.product{
      overflow:hidden;
+}
+.nav-list{
+    margin-top:1em !important;
 }

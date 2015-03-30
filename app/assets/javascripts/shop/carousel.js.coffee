@@ -99,7 +99,9 @@ Product = React.createClass
               className: 'form-wrapper'
               children: 
                 React.DOM.button
-                  className: 'btn primary'
+                  className: 'button primary'
+                  'data-toggle': 'modal'
+                  'data-target': '#checkout'
                   id: 'btnAddCart'
                   children: [
                     'Add to cart'
