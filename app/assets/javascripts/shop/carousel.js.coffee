@@ -1,8 +1,10 @@
 Product = React.createClass
-  change: ->
-    console.log('one jerky')
-  changeelse: ->
-    console.log('other jerky')
+  getInitialState: ->
+    { type: 'Citrus BBQ', size: '1.6oz', title: 'Classic with a tangy twist', price: '4.75', image: 'http://cdn.shopify.com/s/files/1/0369/2125/products/1_1024x1024.jpeg?v=1424288201' }
+  citrus: ->
+    @setState({ type: 'Citrus BBQ', size: '1.6oz', title: 'Classic with a tangy twist', price: '4.75', image: 'http://cdn.shopify.com/s/files/1/0369/2125/products/1_1024x1024.jpeg?v=1424288201' })
+  other: ->
+    @setState({ type: 'Other BBQ', size: '1.6oz', title: 'Classic with a other twist', price: '4.75', image: 'http://cdn.shopify.com/s/files/1/0369/2125/products/1_1024x1024.jpeg?v=1424288201' })
   render: ->
     React.DOM.article
       className: 'product'
@@ -18,13 +20,13 @@ Product = React.createClass
                   children: 
                     React.DOM.img
                       # style: 'width:100%; height:100%; display: block; margin-top:-150px;'
-                      src: 'http://cdn.shopify.com/s/files/1/0369/2125/products/DSC_0856_1024x1024.jpeg?v=1424288201'
+                      src: @state.image
                 React.DOM.aside
                   children: [
                     React.DOM.h1
-                      children: 'Citrus BBQ'
+                      children: @state.type
                     React.DOM.p
-                      children: '1.6oz'
+                      children: @state.size
                     React.DOM.hr({})
                     React.DOM.div
                       className: 'price-wrapper'
@@ -37,13 +39,13 @@ Product = React.createClass
                               className: 'title'
                               children: 
                                 React.DOM.strong
-                                  children: 'Classic with a tangy twist'
+                                  children: @state.title
                             React.DOM.span
                               className: 'curr_symbol'
                               children: '$'
                             React.DOM.span
                               className: 'curr_amt'
-                              children: '5.00'
+                              children: @state.price
                             React.DOM.span
                               className: 'curr_abbrev'
                               children: 'USD'
@@ -76,17 +78,16 @@ Product = React.createClass
                       ]
                     React.DOM.button
                       className: 'swatch'
-                      onClick: @change
+                      onClick: @citrus
                       children:
                         React.DOM.img
-                          src: 'http://cdn.shopify.com/s/files/1/0369/2125/products/1_1024x1024.jpeg?v=1424288201'
+                          src: @state.image
                     React.DOM.button
                       className: 'swatch'
-                      onClick: @changeelse
+                      onClick: @other
                       children:
                         React.DOM.img
                           src: 'http://cdn.shopify.com/s/files/1/0369/2125/products/1_1024x1024.jpeg?v=1424288201'
-                          alt: 'Walnut + Magnetic Snap'
                     React.DOM.hr({})
                   ]
                      
