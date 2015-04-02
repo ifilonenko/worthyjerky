@@ -1,10 +1,10 @@
 Product = React.createClass
   getInitialState: ->
-    { type: 'Citrus BBQ', size: '1.6oz', title: 'Classic with a tangy twist', price: '4.75', image: 'http://cdn.shopify.com/s/files/1/0369/2125/products/1_1024x1024.jpeg?v=1424288201' }
+    { type: 'Citrus BBQ', size: '1.6oz', title: 'Classic with a tangy twist', price: '4.75', image: 'https://mail.google.com/mail/u/1/?ui=2&ik=85887f679a&view=fimg&th=14c7b5989a943864&attid=0.1&disp=inline&realattid=ii_14c7b578b2f89972&safe=1&attbid=ANGjdJ8d2QFTb8yzvxzozmffHVRoQykrlEAf_Dff7P7zUU3lrUj_hOlEtOzOWZpXO3lLccYsHqVcHzf87l8UhhxGCNsa0R5M1ORAW7Cop2usepp4s4dsK1_ib4Jh1N8&ats=1428000259576&rm=14c7b5989a943864&zw&sz=w1412-h685' }
   citrus: ->
-    @setState({ type: 'Citrus BBQ', size: '1.6oz', title: 'Classic with a tangy twist', price: '4.75', image: 'http://cdn.shopify.com/s/files/1/0369/2125/products/1_1024x1024.jpeg?v=1424288201' })
-  other: ->
-    @setState({ type: 'Other BBQ', size: '1.6oz', title: 'Classic with a other twist', price: '4.75', image: 'http://cdn.shopify.com/s/files/1/0369/2125/products/1_1024x1024.jpeg?v=1424288201' })
+    @setState({ type: 'Spicy BBQ', size: '1.6oz', title: 'Classic with a tangy twist', price: '4.75', image: 'https://mail.google.com/mail/u/1/?ui=2&ik=85887f679a&view=fimg&th=14c7b5989a943864&attid=0.2&disp=inline&realattid=ii_14c7b5787383956d&safe=1&attbid=ANGjdJ9zwOlxUXVIPAYa0sxhsbgPl8j6apWJ7ZLoigyVc9JsSG29jn9c2tUMXfQaIryccGEfD1fNrdbQI6LP66gbHvqgpBup780Fbp7YYQXwyNHrAvPkC0VkgPIXQX8&ats=1428000259576&rm=14c7b5989a943864&zw&sz=w1412-h685' })
+  spicy: ->
+    @setState({ type: 'Citrus BBQ', size: '1.6oz', title: 'Classic with a other twist', price: '4.75', image: 'https://mail.google.com/mail/u/1/?ui=2&ik=85887f679a&view=fimg&th=14c7b5989a943864&attid=0.1&disp=inline&realattid=ii_14c7b578b2f89972&safe=1&attbid=ANGjdJ8d2QFTb8yzvxzozmffHVRoQykrlEAf_Dff7P7zUU3lrUj_hOlEtOzOWZpXO3lLccYsHqVcHzf87l8UhhxGCNsa0R5M1ORAW7Cop2usepp4s4dsK1_ib4Jh1N8&ats=1428000259576&rm=14c7b5989a943864&zw&sz=w1412-h685' })
   render: ->
     React.DOM.article
       className: 'product'
@@ -86,10 +86,10 @@ Product = React.createClass
                       onClick: @citrus
                       children:
                         React.DOM.img
-                          src: @state.image
+                          src: 'http://cdn.shopify.com/s/files/1/0369/2125/products/2_1024x1024.jpeg?v=1424288357'
                     React.DOM.button
                       className: 'swatch'
-                      onClick: @other
+                      onClick: @spicy
                       children:
                         React.DOM.img
                           src: 'http://cdn.shopify.com/s/files/1/0369/2125/products/1_1024x1024.jpeg?v=1424288201'
