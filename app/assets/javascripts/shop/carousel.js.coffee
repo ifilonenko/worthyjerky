@@ -76,6 +76,11 @@ Product = React.createClass
                         React.DOM.span
                           children: 'Free shipping with 6 orders'
                       ]
+                    React.DOM.span
+                      className: 'title flavor'
+                      children: 
+                        React.DOM.strong
+                          children: 'Choose a flavor'
                     React.DOM.button
                       className: 'swatch'
                       onClick: @citrus
