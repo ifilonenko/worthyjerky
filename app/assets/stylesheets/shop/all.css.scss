@@ -1142,7 +1142,8 @@ button:hover,  button:focus,  button:active  {
   background-color:  #eb5e28;
   &:hover{
      cursor:pointer;
-  }  
+     color:white;
+  } 
  }
 .btn.secondary:hover  {
      color:  #f1eae0;
