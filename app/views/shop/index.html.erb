@@ -37,19 +37,54 @@
   </section> -->
 
   <div id="react"></div>
-  <div class="modal fade" id="checkout" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal fade" id="checkout" tabindex="-1" role="dialog" aria-labelledby="ticketmodal" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title" id="myModalLabel">Sign Up Page</h4>
         </div>
         <div class="modal-body">
-          ...
+          <div class="sign-up-container">
+            <div class="form-container active info row">
+                <form action="">
+                  <div class="card-related">
+                    <div class="paymentinfo pull-right">
+                      <div class="form-group">
+                        <input class="form-control" placeholder="Card number" type="text" name="number">
+                      </div>
+                      <div class="form-group">
+                        <input class="form-control" placeholder="Full name" type="text" name="name">
+                      </div>
+                      <div class="form-group">
+                        <input class="form-control" placeholder="MM/YY" type="text" name="expiry">
+                      </div>
+                      <div class="form-group">
+                        <input class="form-control" placeholder="CVC" type="text" name="cvc">
+                      </div>
+                    </div>
+                    <div class="card-container">
+                      <div class="card">
+                        <div class="card-wrapper"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <input class="MerchantID form-control"placeholder="Merchant ID" type="text" name="merchantId">
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control" placeholder="Transaction ID (Optional)" type="text" name="transactionID">
+                  </div>
+                  <div class="form-group">
+                    <input class="ReferralID form-control" placeholder="Referrel ID (Optional)" type="text" name="referrelID">
+                  </div>
+                </form>
+            </div>
+        </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <a type="button" class="btn btn-primary" href="dashboard.html">Sign Up</a>
         </div>
       </div>
     </div>

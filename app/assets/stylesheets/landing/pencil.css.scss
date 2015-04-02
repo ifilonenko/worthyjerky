@@ -361,6 +361,10 @@ p {
 }
 .hero-header .action-button {
     display: inline-block;
+    text-decoration: none;
+    &:hover{
+        color:white;
+    }
 }
 .hero-header .also-available {
     font-size: 1em;
@@ -387,7 +391,11 @@ p {
     margin-top: 40px;
     padding-left: 21px;
     top: 260px;
-    width: 110px;
+    width: 170px;
+    text-decoration:none;
+    &:hover{
+        color:#AAA;
+    }
 }
 .no-backgroundsize .hero-header .video-anchor {
     background-image: url("http://www.fiftythree.com/assets/images/icons/chevron-sprite.png");
@@ -440,7 +448,7 @@ p {
 }
 .beginning {
 
-    background: #323033 url("http://www.fiftythree.com/assets/images/pencil/hero@1.5x.jpg") no-repeat 50% 50%;
+    background: #323033 url("https://mail.google.com/mail/u/0/?ui=2&ik=5e12947f52&view=fimg&th=14c785ef0ee3ebf9&attid=0.1&disp=inline&realattid=ii_14c785d5295ac0fc&safe=1&attbid=ANGjdJ97aeVdhUzhfdmwsz3rMYTj9HHnxBBryiRQPZBfIf1-Ck3HLF7ah-qJzVe6vb6tS92jC87CjvLq6OjKalbFLSfc2zui8w4hby3x6YLgksnGuW1MaC---lpLMPI&ats=1427954670546&rm=14c785ef0ee3ebf9&zw&sz=w1412-h685") no-repeat 50% 50%;
     -webkit-background-size: auto 750px;
     -moz-background-size: auto 750px;
     background-size: auto 750px;
