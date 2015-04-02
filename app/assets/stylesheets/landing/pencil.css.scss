@@ -359,9 +359,34 @@ p {
 .hero-header .name {
     font-family: 'Avenir Next LT W01 Bold',  Helvetica,  Arial,  sans-serif;
 }
-.hero-header .action-button {
-    display: inline-block;
+.hero-header .action {
+    display: inline-block !important;
     text-decoration: none;
+  background-color: #eb5e28;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #403d39;
+  display: block;
+  font: 1em 'Avenir Next LT W01 Demi', Helvetica, Arial, sans-serif;
+  height: 41px;
+  line-height: 41px;
+  margin: 20px auto 18px;
+  text-align: center;
+  -webkit-transition: background-color 0.3s ease;
+  -moz-transition: background-color 0.3s ease;
+  -o-transition: background-color 0.3s ease;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+  width: 115px;
     &:hover{
         color:white;
     }
@@ -508,10 +533,6 @@ p {
 }
 .expression-section {
   // background-image: url("https://cornell.app.box.com/representation/file_version_8065161300/image_2048/1.png");
-  -webkit-background-size: 800px auto;
-  -moz-background-size: 800px auto;
-  background-size: 800px auto;
-  padding-top: 550px;
 }
 .expression-section .wrapper {
     display: block;
@@ -903,6 +924,7 @@ p {
     background-image: url("http://www.fiftythree.com/assets/images/pencil/sprite-pencil.png");
 }
 .craft-section .pencil-crafted .pencil-eraser {
+    background-image: url("http://placeholder.it/150x150");
     background-position: -2px -4px;
     min-height: 115px;
 }
@@ -910,18 +932,10 @@ p {
     background-position: -2px -172px;
     min-height: 276px;
 }
-.craft-section .pencil-crafted .pencil-body {
-    background-image: url("http://www.fiftythree.com/assets/images/pencil/sprite-body@1.5x.png");
-    -webkit-background-size: 95px auto;
-    -moz-background-size: 95px auto;
-    background-size: 95px auto;
-    min-height: 592px;
-}
 .no-backgroundsize .craft-section .pencil-crafted .pencil-body {
     background-image: url("http://www.fiftythree.com/assets/images/pencil/sprite-body.png");
 }
 .craft-section .pencil-crafted .pencil-body .part-name {
-    padding-top: 24px;
 }
 .craft-section .pencil-crafted .pencil-battery {
     background-position: -2px -456px;
@@ -1581,6 +1595,41 @@ p {
     margin-left: -5%;
     margin-right: -5%;
     width: 110%}
+.section-wrapper .action {
+    display: inline-block !important;
+    text-decoration: none;
+  background-color: #eb5e28;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #403d39;
+  display: block;
+  font: 1em 'Avenir Next LT W01 Demi', Helvetica, Arial, sans-serif;
+  height: 41px;
+  line-height: 41px;
+  margin: 20px auto 18px;
+  text-align: center;
+  -webkit-transition: background-color 0.3s ease;
+  -moz-transition: background-color 0.3s ease;
+  -o-transition: background-color 0.3s ease;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+  width: 115px;
+    &:hover{
+        color:white;
+    }
+}
+.section-wrapper .description{
+    text-decoration:none;
+}
 .section-copy {
     display: inline-block;
     font-size: 16px;
@@ -2138,6 +2187,7 @@ a.sdk-img {
 }
 .order-section .section-description:hover {
     color: #b33c12;
+    text-decoration:none;
 }
 .order-section .subtitle {
     font-size: 1.625em;
