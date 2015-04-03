@@ -2135,7 +2135,123 @@ article.product  {
 article.product .row  {
      font-size:  0;
  }
+.modal {
+  .modal-content {
+       position: relative;
+       background-color: #ffffff;
+       border: 1px solid #999999;
+       border: 1px solid rgba(0,0,0,0.2);
+       border-radius: 6px;
+       -webkit-box-shadow: 0 3px 9px rgba(0,0,0,0.5);
+       box-shadow: 0 3px 9px rgba(0,0,0,0.5);
+       background-clip: padding-box;
+       outline: none;
+       box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+       overflow:hidden;
+       .NumTicketsPrompt {
+            display: inline-block;
+            margin-right: 1em;
+            margin-left:6em;
+            font-size:18px;
+            font-weight:700;
+       }
+       .dropdown{
+            display: inline;
+            width: 8em;
+            padding-top: 0px !important;
+            padding-bottom: 0px !important;
+       }
+       .NumTickets {
+            display: inline-block;
+            width: 10em;
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+            text-align:left;
+       }
+       #checkoutPayment {
+          .card-wrapper{
+               margin:10px;
+          }
+          .form-container{
+               display:block;
+               float: none;
+               margin-right:0;
+               margin-top:0;
+               width:auto;
+               #finishCheckout {
+                    display:block;
+                    margin:1em 0;
+                    width:100%;
+               }
+               #cardForm{
+                    margin-left:7.4em;
+                    float:none;
+                    width:100%;
+                    input, select{
+                         margin-top:5px;
+                    }
+                    .form-control{
+                         width: 20em;
+                         border:1px solid #CCCCCC;
+                    }
+                    #cardExpiry{
 
+                         margin-right:0.9em;
+                         width:10em;
+                         display:inline;
+                    }
+                    #cardCvc{
+                         width:9em;
+                         display:inline;
+                         margin-left:0px;
+                    }
+                    #City{
+                         display:inline;
+                         margin-right:0.9em;
+                         width:8em;
+                    }
+                    #State{
+                         display:inline;
+                         margin-right:0.9em;
+                         width:5em;
+                         font-family: 'AvenirNextLTW01-Regular', Helvetica, Arial, sans-serif;
+                         color: #66615b;
+                         font-size: 18px;
+                    }
+                    #Zip{
+                         display:inline;
+                         margin-right:0.9em;
+                         width:5em;
+                    }
+                    .shipping{
+                           font-size: 18px;
+                           font-weight: 700;
+                           margin-top: 10px;
+                           margin-bottom: 10px;
+                    }
+               }
+          }
+      }
+  }
+}
+.modal-header {
+     padding: 15px;
+     border-bottom: 1px solid #e5e5e5;
+     min-height: 16.428571429px;
+     background: url(http://tunetap.com/assets/cream-131fcbe4f67f96894d9136be86538798.png);
+     h3, h4 {
+         font-weight: 700;
+         font-size:18px;
+     }
+     p {
+         font-size: 18px;
+         font-weight: 300;
+         margin-bottom: 0.5em;
+     }
+}
+.modal-footer {
+   background: url(http://tunetap.com/assets/cream-131fcbe4f67f96894d9136be86538798.png);
+}
 article.product .row .carousel-gestures  {
      display:  inline-block;
      font-size:  18px;

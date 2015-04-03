@@ -1,5 +1,8 @@
-// $(function() {
-
+$(document).ready(function(){/* activate scrollspy menu */
+$('.active form').card({
+  container: $('.card-wrapper')
+})
+});
 //     var $win = $(window),
 //         $pencil = $('.pencil-crafted'),
 //         $parts = null,
