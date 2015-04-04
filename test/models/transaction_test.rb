@@ -11,9 +11,11 @@
 #
 
 require 'test_helper'
-
 class TransactionTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+    test "if Transactor worked" do
+      transaction = Transaction.new(is_paid: true, description: 'something',  value: 20)
+      assert transaction.is_paid == true
+      assert transaction.description?
+      assert transaction.value?
+    end
 end

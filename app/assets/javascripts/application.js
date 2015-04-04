@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require card
-//= require stripe
 //= require react.min
+//= require stripe
 //= require turbolinks
 //= require_tree .

@@ -5,7 +5,7 @@
 #  id             :integer          not null, primary key
 #  transaction_id :integer
 #  quantity       :integer
-#  type           :string
+#  selection      :string
 #  address        :string
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
@@ -21,7 +21,7 @@ class Order < ActiveRecord::Base
   def as_json(options = {})
     super(options).merge(
       quantity: self.quantity,
-      type: self.type,
+      selection: self.selection,
       address: self.address,
       name: self.name,
       email: self.email

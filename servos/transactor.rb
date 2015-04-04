@@ -14,7 +14,8 @@ class Transactor
       p 'Error making charge'
       p e
       transaction.is_paid = false
-      transaction.save      
+      transaction.save    
+      # HAVE TO MAKE THIS WORK  
       return false
     end
     # Transaction was successful
@@ -27,31 +28,43 @@ class Transactor
   private
   def charge_amount(quantity)
     if quantity == 1
-      return 8
+      return 8.00
     elsif quantity == 3
-      return 20
+      return 20.00
     elsif quantity == 6
-      return 28
+      return 28.50
+    end
   end
   
   def make_charge(params)
     # Exceptions thrown by payment processor will pass through
     token = params[:token]
+    p token
     email = params[:email]
+    p email
     address = params[:address]
-    type = params[:type]
+    p address
+    selection = params[:selection]
+    p type
     name = params[:name]
+    p name
     quantity = params[:quantity]
+    p quantity
     amount = charge_amount(quantity)
+    p amount
     description = charge_description(quantity,type,name,address,email)
+    p description
     payment_processor.new(token, amount).charge(description)
   end
 
   def create_order(params, transaction)
-    Order.new(transaction_id: transaction.id, quantity: params[:quantity], address: params[:address], email: params[:email], type: params[:type], name: params[:name])
+    p params
+    p '---------'
+    p transaction
+    Order.new(transaction_id: transaction.id, quantity: params[:quantity], address: params[:address], email: params[:email], selection: params[:selection], name: params[:name])
   end
 
-  def charge_description(name,address,email)
+  def charge_description(quantity,type,name,address,email)
     "Order for #{ quantity } #{ type } for #{ name } to #{ address } and you can email him at #{ email }"
   end
 

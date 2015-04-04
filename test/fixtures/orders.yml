@@ -5,7 +5,7 @@
 #  id             :integer          not null, primary key
 #  transaction_id :integer
 #  quantity       :integer
-#  type           :string
+#  selection      :string
 #  address        :string
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
@@ -15,14 +15,3 @@
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  transaction_id: 1
-  quantity: 1
-  type: 
-  address: MyString
-
-two:
-  transaction_id: 1
-  quantity: 1
-  type: 
-  address: MyString

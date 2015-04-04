@@ -46,6 +46,7 @@ Product = React.createClass
       @setState({ emailErrors: ['Provide an email to receive your tickets.'] })
   stripeResponseHandler: (status, response) ->
     if response.error
+      console.log('response error')
       @addCheckoutError(response.error.message)
       $('#finishCheckout').show()
       $('#finishCheckoutDisabled').hide()
@@ -55,7 +56,7 @@ Product = React.createClass
       token: response.id,
       email: @state.userEmail,
       address: full_address,
-      type: @state.type,
+      selection: @state.type,
       name: @state.name,
       quantity: @state.count
     }
@@ -103,7 +104,7 @@ Product = React.createClass
     else if value == 3 
       shipping = 5.75
     @setState({ count: value, shipping: shipping, totalcost: value*unitCost+shipping})
-    console.log(value)
+    console.log(v)
   stateinitial: (e)->
     value = e.target.value
     @setState({ state: value })
