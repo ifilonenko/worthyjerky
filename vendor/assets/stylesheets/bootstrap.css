@@ -4410,6 +4410,11 @@ a.thumbnail.active {
   color: #333333;
 }
 .alert {
+  width: 25em;
+  margin-top: 10px;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
   padding: 15px;
   margin-bottom: 20px;
   border: 1px solid transparent;

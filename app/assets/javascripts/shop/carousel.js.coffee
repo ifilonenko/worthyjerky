@@ -46,7 +46,9 @@ Product = React.createClass
       @setState({ emailErrors: ['Provide an email to receive your tickets.'] })
   stripeResponseHandler: (status, response) ->
     if response.error
-      console.log('response error')
+      console.log(status)
+      console.log('-------')
+      console.log(JSON.stringify(response))
       @addCheckoutError(response.error.message)
       $('#finishCheckout').show()
       $('#finishCheckoutDisabled').hide()
@@ -76,7 +78,6 @@ Product = React.createClass
       ).bind(this)
     })
   finishCheckout: ->
-    Stripe.setPublishableKey('pk_live_9iIsoiLYSpexBG8eDsO7WYDk')
     @setState({ checkoutErrors: [] })
     $('#finishCheckout').hide()
     $('#finishCheckoutDisabled').show()
@@ -104,7 +105,7 @@ Product = React.createClass
     else if value == 3 
       shipping = 5.75
     @setState({ count: value, shipping: shipping, totalcost: value*unitCost+shipping})
-    console.log(v)
+    console.log(value)
   stateinitial: (e)->
     value = e.target.value
     @setState({ state: value })
@@ -575,14 +576,14 @@ Product = React.createClass
                                   onClick: @finishCheckout
                                   children: 'Finish'
                                 React.DOM.button
-                                  className: 'btn btn-primary'
+                                  className: 'button primary spinner'
                                   id: 'finishCheckoutDisabled'
                                   disabled: 'disabled'
                                   children:
                                     React.DOM.i
                                       className: 'fa fa-spin fa-spinner'
                                 (React.DOM.div
-                                  className: 'alert alert-danger'
+                                  className: 'card-alert alert alert-danger'
                                   children: checkoutErrorsBody
                                 ) if checkoutErrorsBody.length > 0
                               ]

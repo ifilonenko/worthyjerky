@@ -1,3 +1,6 @@
+#finishCheckoutDisabled {
+     display:none;
+}
 .cf:before,  .cf:after  {
      content:  " ";
      display:  table }
@@ -1145,6 +1148,10 @@ button:hover,  button:focus,  button:active  {
      color:white;
   } 
  }
+.spinner {
+  margin-top: 10px !important;
+  margin-left: 19.75em !important;
+}
 .btn.secondary:hover  {
      color:  #f1eae0;
      background-color:  #66625b }
@@ -2209,6 +2216,13 @@ article.product .row  {
                               display:block;
                               margin:1em 0;
                               width:100%;
+                         }
+                         .card-alert{
+                                width: 25em !important;
+                                margin-top: 10px !important;
+                                display: block !important;
+                                margin-right: auto !important;
+                                margin-left: auto !important;
                          }
                          #cardForm{
                               margin-left:3.6em;
