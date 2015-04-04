@@ -2249,12 +2249,21 @@ article.product .row  {
                                    margin-right:0.9em;
                                    width:4.9em;
                               }
-                              .shipping{
+                              .shipping, .email{
                                      font-size: 18px;
                                      font-weight: 700;
                                      margin-top: 10px;
                                      margin-bottom: 10px;
                               }
+                              .email {
+                                .normal{
+                                   margin-left:5px !important;
+                                   font-weight:300 !important;
+                                   font-style:italic !important;
+                                   color: #AAA !important;
+                                }
+                              }
+
                          }
                     }
                     #finishCheckout{

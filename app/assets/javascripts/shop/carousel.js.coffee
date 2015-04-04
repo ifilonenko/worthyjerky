@@ -1,13 +1,101 @@
 Product = React.createClass
   getInitialState: ->
-    { totalcost: 0, shipping: 0, cc: '', fullname: '', mmyy: '', cvc: '', address: '', city: '', zip: '', count: 0, state: 'AL', type: 'Citrus BBQ', size: '1.6oz', title: 'Classic with a tangy twist', price: '4.75', image: 'https://mail.google.com/mail/u/1/?ui=2&ik=85887f679a&view=fimg&th=14c7b5989a943864&attid=0.1&disp=inline&realattid=ii_14c7b578b2f89972&safe=1&attbid=ANGjdJ8d2QFTb8yzvxzozmffHVRoQykrlEAf_Dff7P7zUU3lrUj_hOlEtOzOWZpXO3lLccYsHqVcHzf87l8UhhxGCNsa0R5M1ORAW7Cop2usepp4s4dsK1_ib4Jh1N8&ats=1428000259576&rm=14c7b5989a943864&zw&sz=w1412-h685' }
+    { 
+      emailErrors: [],
+      checkoutErrors: [],
+      userEmail: '',
+      totalcost: 0, 
+      shipping: 0, 
+      number: '', 
+      name: '', 
+      expiry: '', 
+      cvc: '', 
+      address: '', 
+      city: '', 
+      zip: '', 
+      count: 0, 
+      state: '', 
+      type: 'Citrus BBQ', 
+      size: '1.6oz', 
+      title: 'Classic with a tangy twist', 
+      price: '4.75', 
+      image: 'https://mail.google.com/mail/u/1/?ui=2&ik=85887f679a&view=fimg&th=14c7b5989a943864&attid=0.1&disp=inline&realattid=ii_14c7b578b2f89972&safe=1&attbid=ANGjdJ8d2QFTb8yzvxzozmffHVRoQykrlEAf_Dff7P7zUU3lrUj_hOlEtOzOWZpXO3lLccYsHqVcHzf87l8UhhxGCNsa0R5M1ORAW7Cop2usepp4s4dsK1_ib4Jh1N8&ats=1428000259576&rm=14c7b5989a943864&zw&sz=w1412-h685' 
+    }
+  addCheckoutError: (err) ->
+    errors = @state.checkoutErrors
+    errors.push(err)
+    @setState({ checkoutErrors: errors })
+  updateEmail: (e) ->
+    email = e.target.value
+    @setState({ userEmail: email })
+    console.log(email)
+  updateCheckoutParameter: (e) ->
+    key = e.target.name
+    value = e.target.value
+    stateObj = {}
+    stateObj[key] = value
+    @setState(stateObj)
+    console.log(stateObj)
+
+  submitEmail: ->
+    if @state.userEmail.length > 0
+      @setState({ emailErrors: [] })
+      $('#checkoutEmail').slideUp()
+      $('#checkoutOther').slideDown()
+    else
+      @setState({ emailErrors: ['Provide an email to receive your tickets.'] })
+  stripeResponseHandler: (status, response) ->
+    if response.error
+      @addCheckoutError(response.error.message)
+      $('#finishCheckout').show()
+      $('#finishCheckoutDisabled').hide()
+      return
+    full_address = @state.address + ', ' + @state.city + ', ' + @state.state + ', ' + @state.zip + ', ' + 'United States'
+    params = {
+      token: response.id,
+      email: @state.userEmail,
+      address: full_address,
+      type: @state.type,
+      name: @state.name,
+      quantity: @state.count
+    }
+    $.ajax({
+      type: 'POST'
+      url: '/transactions'
+      data: params
+      dataType: 'JSON'
+      success: ((resp) ->
+        if resp.success
+            alert('Your transaction went through — check your email for your receipt.')
+            window.location.reload()
+        else
+          @addCheckoutError('There was an error with your card. Please try again or contact us for help: admin@worthyjerky.com')
+          $('#finishCheckout').show()
+          $('#finishCheckoutDisabled').hide()
+      ).bind(this)
+    })
+  finishCheckout: ->
+    Stripe.setPublishableKey('pk_live_9iIsoiLYSpexBG8eDsO7WYDk')
+    @setState({ checkoutErrors: [] })
+    $('#finishCheckout').hide()
+    $('#finishCheckoutDisabled').show()
+    exp = @state.expiry
+    comps = exp.split('/')
+    month = comps[0].trim()
+    year = comps[1].trim()
+    console.log('Card number: ' + @state.number)
+    Stripe.createToken({
+      number: @state.number
+      cvc: @state.cvc
+      exp_month: month
+      exp_year: year
+    }, @stripeResponseHandler)
   citrus: ->
     @setState({ type: 'Spicy BBQ', size: '1.6oz', title: 'Classic infused with spices', price: '4.75', image: 'https://mail.google.com/mail/u/1/?ui=2&ik=85887f679a&view=fimg&th=14c7b5989a943864&attid=0.2&disp=inline&realattid=ii_14c7b5787383956d&safe=1&attbid=ANGjdJ9zwOlxUXVIPAYa0sxhsbgPl8j6apWJ7ZLoigyVc9JsSG29jn9c2tUMXfQaIryccGEfD1fNrdbQI6LP66gbHvqgpBup780Fbp7YYQXwyNHrAvPkC0VkgPIXQX8&ats=1428000259576&rm=14c7b5989a943864&zw&sz=w1412-h685' })
   spicy: ->
     @setState({ type: 'Citrus BBQ', size: '1.6oz', title: 'Classic with a tangy twist', price: '4.75', image: 'https://mail.google.com/mail/u/1/?ui=2&ik=85887f679a&view=fimg&th=14c7b5989a943864&attid=0.1&disp=inline&realattid=ii_14c7b578b2f89972&safe=1&attbid=ANGjdJ8d2QFTb8yzvxzozmffHVRoQykrlEAf_Dff7P7zUU3lrUj_hOlEtOzOWZpXO3lLccYsHqVcHzf87l8UhhxGCNsa0R5M1ORAW7Cop2usepp4s4dsK1_ib4Jh1N8&ats=1428000259576&rm=14c7b5989a943864&zw&sz=w1412-h685' })
-  count: ->
-    console.log('selected: ' + $('#count').val())
-    value = parseInt($('#count').val())
+  count: (e)->
+    value = parseInt(e.target.value)
     shipping = 0
     unitCost = 4.75
     if value == 1
@@ -15,10 +103,20 @@ Product = React.createClass
     else if value == 3 
       shipping = 5.75
     @setState({ count: value, shipping: shipping, totalcost: value*unitCost+shipping})
-  stateinitial: ->
-    value = $('#State').val()
+    console.log(value)
+  stateinitial: (e)->
+    value = e.target.value
     @setState({ state: value })
+    console.log(value)
   render: ->
+    emailErrorsBody = @state.emailErrors.map((error) ->
+      React.DOM.p
+        children: error
+    )
+    checkoutErrorsBody = @state.checkoutErrors.map((error) ->
+      React.DOM.p
+        children: error
+    )
     React.DOM.div
       children: [
         React.DOM.article
@@ -231,24 +329,33 @@ Product = React.createClass
                                           name: 'number'
                                           'data-stripe': 'number'
                                           id: 'cardNumber'
+                                          value: @state.number
+                                          onChange: @updateCheckoutParameter
                                           className: 'form-control'
                                         React.DOM.input
                                           placeholder: 'Full name'
                                           type: 'text'
                                           name: 'name'
                                           id: 'cardName'
+                                          value: @state.name
+                                          onChange: @updateCheckoutParameter
                                           className: 'form-control'
                                         React.DOM.input
                                           placeholder: 'MM/YY'
                                           type: 'text'
                                           name: 'expiry'
                                           id: 'cardExpiry'
+                                          value: @state.expiry
+                                          onChange: @updateCheckoutParameter
                                           className: 'form-control'  
                                         React.DOM.input
                                           placeholder: 'CVC'
                                           type: 'text'
                                           name: 'cvc'
                                           'data-stripe': 'cvc'
+                                          rqeuired: 'required'
+                                          value: @state.cvc
+                                          onChange: @updateCheckoutParameter
                                           id: 'cardCvc'
                                           className: 'form-control required'   
                                         React.DOM.p
@@ -260,17 +367,21 @@ Product = React.createClass
                                           name: 'address'
                                           id: 'Address'
                                           className: 'form-control'   
+                                          value: @state.address
+                                          onChange: @updateCheckoutParameter
                                         React.DOM.input
                                           placeholder: 'City'
                                           type: 'text'
-                                          name: 'zip'
+                                          name: 'city'
                                           id: 'City'
-                                          className: 'form-control' 
+                                          className: 'form-control'   
+                                          value: @state.city
+                                          onChange: @updateCheckoutParameter
                                         React.DOM.select
                                           className: 'dropdown form-control input'
                                           id: 'State'
                                           required: 'required'
-                                          name: 'carlist'
+                                          name: 'state'
                                           form: 'carform'
                                           onChange: @stateinitial
                                           children: [
@@ -430,18 +541,49 @@ Product = React.createClass
                                             React.DOM.option
                                               value: "WY"
                                               children: "WY"
-                                          ]
+                                          ] 
                                         React.DOM.input
                                           placeholder: 'Zip'
                                           type: 'text'
                                           name: 'zip'
                                           id: 'Zip'
-                                          className: 'form-control'                                        
+                                          className: 'form-control'    
+                                          value: @state.zip
+                                          onChange: @updateCheckoutParameter                                    
+                                        React.DOM.p
+                                          className: 'email'
+                                          children: [
+                                            React.DOM.span
+                                              children: 'Email'
+                                            React.DOM.span
+                                              className: 'normal'
+                                              children: '(for confirmation email)'
+                                          ]
+                                        React.DOM.input
+                                          placeholder: 'you@example.com'
+                                          type: 'text'
+                                          name: 'email'
+                                          id: 'Email'
+                                          className: 'form-control' 
+                                          value: @state.email
+                                          onChange: @updateEmail                                          
                                       ]
                                 React.DOM.button
                                   className: 'button primary'
                                   id: 'finishCheckout'
+                                  onClick: @finishCheckout
                                   children: 'Finish'
+                                React.DOM.button
+                                  className: 'btn btn-primary'
+                                  id: 'finishCheckoutDisabled'
+                                  disabled: 'disabled'
+                                  children:
+                                    React.DOM.i
+                                      className: 'fa fa-spin fa-spinner'
+                                (React.DOM.div
+                                  className: 'alert alert-danger'
+                                  children: checkoutErrorsBody
+                                ) if checkoutErrorsBody.length > 0
                               ]
                           ]
                   ]
