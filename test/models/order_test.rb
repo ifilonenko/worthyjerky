@@ -9,6 +9,8 @@
 #  address        :string
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
+#  name           :string
+#  email          :string
 #
 
 require 'test_helper'

@@ -3,11 +3,11 @@ class TransactionsController < ApplicationController
     preferred_email = params[:email]
     count = params[:quantity].to_i
     transaction_params = {
-      email: preferred_email
-      address: params[:address]
-      type: params[:type] 
-      name: params[:name]
-      quantity: count
+      email: preferred_email,
+      address: params[:address],
+      type: params[:type],
+      name: params[:name],
+      quantity: count,
       token: params[:token]
     }
     processor = (Rails.env.test? && params[:processor]) ? params[:processor] : StripeProcessor

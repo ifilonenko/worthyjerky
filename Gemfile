@@ -27,7 +27,8 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 # Setting up reactjs
-
+# Stripe
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'annotate', '~> 2.6.5'
 
 gem 'rails_12factor'
