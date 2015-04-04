@@ -1,19 +1,21 @@
 Product = React.createClass
   getInitialState: ->
-    { shipping: 3.25, cc: '', fullname: '', mmyy: '', cvc: '', address: '', city: '', zip: '', count: 1, state: 'AL', type: 'Citrus BBQ', size: '1.6oz', title: 'Classic with a tangy twist', price: '4.75', image: 'https://mail.google.com/mail/u/1/?ui=2&ik=85887f679a&view=fimg&th=14c7b5989a943864&attid=0.1&disp=inline&realattid=ii_14c7b578b2f89972&safe=1&attbid=ANGjdJ8d2QFTb8yzvxzozmffHVRoQykrlEAf_Dff7P7zUU3lrUj_hOlEtOzOWZpXO3lLccYsHqVcHzf87l8UhhxGCNsa0R5M1ORAW7Cop2usepp4s4dsK1_ib4Jh1N8&ats=1428000259576&rm=14c7b5989a943864&zw&sz=w1412-h685' }
+    { totalcost: 0, shipping: 0, cc: '', fullname: '', mmyy: '', cvc: '', address: '', city: '', zip: '', count: 0, state: 'AL', type: 'Citrus BBQ', size: '1.6oz', title: 'Classic with a tangy twist', price: '4.75', image: 'https://mail.google.com/mail/u/1/?ui=2&ik=85887f679a&view=fimg&th=14c7b5989a943864&attid=0.1&disp=inline&realattid=ii_14c7b578b2f89972&safe=1&attbid=ANGjdJ8d2QFTb8yzvxzozmffHVRoQykrlEAf_Dff7P7zUU3lrUj_hOlEtOzOWZpXO3lLccYsHqVcHzf87l8UhhxGCNsa0R5M1ORAW7Cop2usepp4s4dsK1_ib4Jh1N8&ats=1428000259576&rm=14c7b5989a943864&zw&sz=w1412-h685' }
   citrus: ->
     @setState({ type: 'Spicy BBQ', size: '1.6oz', title: 'Classic infused with spices', price: '4.75', image: 'https://mail.google.com/mail/u/1/?ui=2&ik=85887f679a&view=fimg&th=14c7b5989a943864&attid=0.2&disp=inline&realattid=ii_14c7b5787383956d&safe=1&attbid=ANGjdJ9zwOlxUXVIPAYa0sxhsbgPl8j6apWJ7ZLoigyVc9JsSG29jn9c2tUMXfQaIryccGEfD1fNrdbQI6LP66gbHvqgpBup780Fbp7YYQXwyNHrAvPkC0VkgPIXQX8&ats=1428000259576&rm=14c7b5989a943864&zw&sz=w1412-h685' })
   spicy: ->
     @setState({ type: 'Citrus BBQ', size: '1.6oz', title: 'Classic with a tangy twist', price: '4.75', image: 'https://mail.google.com/mail/u/1/?ui=2&ik=85887f679a&view=fimg&th=14c7b5989a943864&attid=0.1&disp=inline&realattid=ii_14c7b578b2f89972&safe=1&attbid=ANGjdJ8d2QFTb8yzvxzozmffHVRoQykrlEAf_Dff7P7zUU3lrUj_hOlEtOzOWZpXO3lLccYsHqVcHzf87l8UhhxGCNsa0R5M1ORAW7Cop2usepp4s4dsK1_ib4Jh1N8&ats=1428000259576&rm=14c7b5989a943864&zw&sz=w1412-h685' })
   count: ->
-    value = $('#count').val()
-    if value == 1 
-      @setState({ count: value, shipping: 3.25 })
-    if value == 3 
-      @setState({ count: value, shipping: 5.75 })
-    if value == 6 
-      @setState({ count: value, shipping: 0 })
-  state: ->
+    console.log('selected: ' + $('#count').val())
+    value = parseInt($('#count').val())
+    shipping = 0
+    unitCost = 4.75
+    if value == 1
+      shipping = 3.25
+    else if value == 3 
+      shipping = 5.75
+    @setState({ count: value, shipping: shipping, totalcost: value*unitCost+shipping})
+  stateinitial: ->
     value = $('#State').val()
     @setState({ state: value })
   render: ->
@@ -171,6 +173,9 @@ Product = React.createClass
                               onChange: @count
                               children: [
                                 React.DOM.option
+                                  value: '0'
+                                  children: 'Select Value'                                
+                                React.DOM.option
                                   value: '1'
                                   children: '1'
                                 React.DOM.option
@@ -185,7 +190,30 @@ Product = React.createClass
                               children:
                                 React.DOM.p
                                   className: 'NumTicketsPrompt'
-                                  children: @state.count + 'x' + '$4.75' + ' + ' + '$' + @state.shipping + '(shipping)' + ' = ' + '$8.00'
+                                  id: 'costs'
+                                  children: [
+                                    React.DOM.span
+                                      children:
+                                        React.DOM.strong
+                                          children: @state.count 
+                                    React.DOM.span
+                                      className: 'normal'
+                                      children: 'x ' + '$4.75' + ' + '
+                                    React.DOM.span
+                                      children:
+                                        React.DOM.strong
+                                          children: '$' + @state.shipping  
+                                    React.DOM.span
+                                      className: 'normal'
+                                      children: '(shipping)'
+                                    React.DOM.span
+                                      className: 'normal space'
+                                      children: '='
+                                    React.DOM.span
+                                      children: 
+                                        React.DOM.strong
+                                          children: '$' + @state.totalcost.toFixed(2)
+                                  ]
                             React.DOM.article
                               id: 'checkoutPayment'
                               children: [
@@ -244,8 +272,11 @@ Product = React.createClass
                                           required: 'required'
                                           name: 'carlist'
                                           form: 'carform'
-                                          onChange: @state
+                                          onChange: @stateinitial
                                           children: [
+                                            React.DOM.option
+                                              value: ""
+                                              children: "State"                                            
                                             React.DOM.option
                                               value: "AL"
                                               children: "AL"

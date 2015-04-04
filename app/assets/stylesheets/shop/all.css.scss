@@ -2136,117 +2136,135 @@ article.product .row  {
      font-size:  0;
  }
 .modal {
-  .modal-content {
-       position: relative;
-       background-color: #ffffff;
-       border: 1px solid #999999;
-       border: 1px solid rgba(0,0,0,0.2);
-       border-radius: 6px;
-       -webkit-box-shadow: 0 3px 9px rgba(0,0,0,0.5);
-       box-shadow: 0 3px 9px rgba(0,0,0,0.5);
-       background-clip: padding-box;
-       outline: none;
-       box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-       overflow:hidden;
-       .NumTicketsPrompt {
-            display: inline-block;
-            margin-right: 1em;
-            margin-left:6em;
-            font-size:18px;
-            font-weight:700;
-       }
-       .dropdown{
-            display: inline;
-            width: 8em;
-            padding-top: 0px !important;
-            padding-bottom: 0px !important;
-       }
-       .NumTickets {
-            display: inline-block;
-            width: 10em;
-            padding-top: 0 !important;
-            padding-bottom: 0 !important;
-            text-align:left;
-       }
-       .div-container{
-            background: #EEE;
-            width: 25em;
-            border-radius: 10px;
-            margin-top: 5px;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-       }
-       #checkoutPayment {
-          .card-wrapper{
-               margin:10px;
-          }
-          .form-container{
-               display:block;
-               float: none;
-               margin-right:0;
-               margin-top:0;
-               width:auto;
-               #finishCheckout {
-                    display:block;
-                    margin:1em 0;
-                    width:100%;
-               }
-               #cardForm{
-                    margin-left:7.4em;
-                    float:none;
-                    width:100%;
-                    input, select{
-                         margin-top:5px;
+     .modal-dialog {  
+          width: 35em;
+          font-family: 'AvenirNextLTW01-Regular', Helvetica, Arial, sans-serif;
+          .modal-content {
+                 position: relative;
+                 background-color: #ffffff;
+                 border: 1px solid #999999;
+                 border: 1px solid rgba(0,0,0,0.2);
+                 border-radius: 6px;
+                 -webkit-box-shadow: 0 3px 9px rgba(0,0,0,0.5);
+                 box-shadow: 0 3px 9px rgba(0,0,0,0.5);
+                 background-clip: padding-box;
+                 outline: none;
+                 box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+                 overflow:hidden;
+                 .NumTicketsPrompt {
+                      display: inline-block;
+                      margin-right: 1em;
+                      margin-left:3em;
+                      font-size:18px;
+                      font-weight:700;
+                 }
+                 .dropdown{
+                      display: inline;
+                      width: 11em;
+                      padding-top: 0px !important;
+                      padding-bottom: 0px !important;
+                 }
+                 .NumTickets {
+                      display: inline-block;
+                      width: 10em;
+                      padding-top: 0 !important;
+                      padding-bottom: 0 !important;
+                      text-align:left;
+                 }
+                 .div-container{
+                      background: #EEE;
+                      width: 25em;
+                      border-radius: 10px;
+                      margin-top: 5px;
+                      display: block;
+                      margin-left: auto;
+                      margin-right: auto;
+                      #costs{
+                         margin-top:0.5em;
+                         margin-left:1em !important;
+                         .normal{
+                              margin-left:5px;
+                              margin-right:5px;
+                              font-weight:300;
+                              font-style:italic;
+                              color: #AAA;
+                         }
+                         .space {
+                              margin-left:0em;
+                         }
+                      }
+                 }
+                 #checkoutPayment {
+                    .card-wrapper{
+                         margin:10px;
                     }
-                    .form-control{
-                         width: 20em;
-                         border:1px solid #CCCCCC;
-                    }
-                    #cardExpiry{
+                    .form-container{
+                         display:block;
+                         float: none;
+                         margin-right:0;
+                         margin-top:0;
+                         width:auto;
+                         #finishCheckout {
+                              display:block;
+                              margin:1em 0;
+                              width:100%;
+                         }
+                         #cardForm{
+                              margin-left:3.6em;
+                              float:none;
+                              width:100%;
+                              input, select{
+                                   margin-top:5px;
+                              }
+                              .form-control{
+                                   width: 20em;
+                                   border:1px solid #CCCCCC;
+                              }
+                              #cardExpiry{
 
-                         margin-right:0.9em;
-                         width:10em;
-                         display:inline;
+                                   margin-right:0.9em;
+                                   width:10em;
+                                   display:inline;
+                              }
+                              #cardCvc{
+                                   width:9em;
+                                   display:inline;
+                                   margin-left:0px;
+                              }
+                              #City{
+                                   display:inline;
+                                   margin-right:0.5em;
+                                   width:8.1em;
+                              }
+                              #State{
+                                   display:inline;
+                                   margin-right:0.5em;
+                                   width:6em;
+                                   font-family: 'AvenirNextLTW01-Regular', Helvetica, Arial, sans-serif;
+                                   color: #66615b;
+                                   font-size: 18px;
+                              }
+                              #Zip{
+                                   display:inline;
+                                   margin-right:0.9em;
+                                   width:4.9em;
+                              }
+                              .shipping{
+                                     font-size: 18px;
+                                     font-weight: 700;
+                                     margin-top: 10px;
+                                     margin-bottom: 10px;
+                              }
+                         }
                     }
-                    #cardCvc{
-                         width:9em;
-                         display:inline;
-                         margin-left:0px;
+                    #finishCheckout{
+                      margin-top: 10px;
+                      margin-bottom: 0px;
+                      margin-left: 18em;
                     }
-                    #City{
-                         display:inline;
-                         margin-right:0.9em;
-                         width:8em;
-                    }
-                    #State{
-                         display:inline;
-                         margin-right:0.9em;
-                         width:5em;
-                         font-family: 'AvenirNextLTW01-Regular', Helvetica, Arial, sans-serif;
-                         color: #66615b;
-                         font-size: 18px;
-                    }
-                    #Zip{
-                         display:inline;
-                         margin-right:0.9em;
-                         width:5em;
-                    }
-                    .shipping{
-                           font-size: 18px;
-                           font-weight: 700;
-                           margin-top: 10px;
-                           margin-bottom: 10px;
-                    }
-               }
+                }
           }
-          #finishCheckout{
-            margin-top: 10px;
-            margin-bottom: 0px;
-            margin-left: 21.5em;
-          }
-      }
-  }
+     }
 }
 .modal-header {
      padding: 15px;
