@@ -86,7 +86,7 @@ Product = React.createClass
     month = comps[0].trim()
     year = comps[1].trim()
     console.log('Card number: ' + @state.number)
-    Stripe.setPublishableKey('pk_test_su003qHbIyGutfMH4WY6Z8FZ')
+    Stripe.setPublishableKey('pk_live_S0lZaCTcl7JvaIS0C4WcKOqk')
     Stripe.card.createToken({
       number: @state.number
       cvc: @state.cvc

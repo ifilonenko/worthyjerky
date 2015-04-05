@@ -6,6 +6,6 @@ class OrderMailer < ActionMailer::Base
     address = order.address
     selection = order.selection
     quantity = order.quantity
-    mail(to: email, subject: "Your receipt: #{ quantity } order(s) of #{ selection }", body: 'Dear #{ name }, this is your email confirmation for ordering #{ quantity } order(s) of #{ selection }. It will be delivered to #{ address } in a span of 2-6 buisness days.')
+    mail(to: email, subject: 'Your receipt:' + quantity + 'order(s) of ' + selection, body: 'Dear ' + name + ', this is your email confirmation for ordering ' + quantity + ' order(s) of ' + selection + '. It will be delivered to ' + address + ' in a span of 2-6 buisness days.')
   end
 end
