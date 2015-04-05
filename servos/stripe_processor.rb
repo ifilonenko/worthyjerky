@@ -7,7 +7,7 @@ class StripeProcessor
   end
 
   def charge(description='')
-    Stripe.api_key = 'ENV['STRIPE_TEST_SECRET_KEY']'
+    Stripe.api_key = ENV['STRIPE_TEST_SECRET_KEY']
     Stripe::Charge.create(
       amount: amount,
       currency: 'usd',

@@ -45,10 +45,10 @@ Product = React.createClass
     else
       @setState({ emailErrors: ['Provide an email to receive your tickets.'] })
   stripeResponseHandler: (status, response) ->
+    console.log(JSON.stringify(response))
     if response.error
       console.log(status)
-      console.log('-------')
-      console.log(JSON.stringify(response))
+      console.log('Stripe response handler')
       @addCheckoutError(response.error.message)
       $('#finishCheckout').show()
       $('#finishCheckoutDisabled').hide()
@@ -86,11 +86,18 @@ Product = React.createClass
     month = comps[0].trim()
     year = comps[1].trim()
     console.log('Card number: ' + @state.number)
-    Stripe.createToken({
+    Stripe.setPublishableKey('pk_test_su003qHbIyGutfMH4WY6Z8FZ')
+    Stripe.card.createToken({
       number: @state.number
       cvc: @state.cvc
       exp_month: month
       exp_year: year
+      name: @state.name
+      address_line1: @state.address
+      address_city: @state.city
+      address_state: @state.state
+      address_zip: @state.zip
+      address_country: 'US'
     }, @stripeResponseHandler)
   citrus: ->
     @setState({ type: 'Spicy BBQ', size: '1.6oz', title: 'Classic infused with spices', price: '4.75', image: 'https://mail.google.com/mail/u/1/?ui=2&ik=85887f679a&view=fimg&th=14c7b5989a943864&attid=0.2&disp=inline&realattid=ii_14c7b5787383956d&safe=1&attbid=ANGjdJ9zwOlxUXVIPAYa0sxhsbgPl8j6apWJ7ZLoigyVc9JsSG29jn9c2tUMXfQaIryccGEfD1fNrdbQI6LP66gbHvqgpBup780Fbp7YYQXwyNHrAvPkC0VkgPIXQX8&ats=1428000259576&rm=14c7b5989a943864&zw&sz=w1412-h685' })

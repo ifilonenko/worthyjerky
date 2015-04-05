@@ -1,3 +1,5 @@
+require Rails.root.join('app/models/order').to_path
+require Rails.root.join('app/models/transaction').to_path
 class Transactor
   attr_reader :payment_processor
   def initialize(payment_processor)
@@ -38,6 +40,7 @@ class Transactor
   
   def make_charge(params)
     # Exceptions thrown by payment processor will pass through
+    p 'and it begins'
     token = params[:token]
     p token
     email = params[:email]
@@ -45,14 +48,14 @@ class Transactor
     address = params[:address]
     p address
     selection = params[:selection]
-    p type
+    p selection
     name = params[:name]
     p name
     quantity = params[:quantity]
     p quantity
-    amount = charge_amount(quantity)
+    amount = (charge_amount(quantity)*100).to_i
     p amount
-    description = charge_description(quantity,type,name,address,email)
+    description = charge_description(quantity,selection,name,address,email)
     p description
     payment_processor.new(token, amount).charge(description)
   end
@@ -64,17 +67,17 @@ class Transactor
     Order.new(transaction_id: transaction.id, quantity: params[:quantity], address: params[:address], email: params[:email], selection: params[:selection], name: params[:name])
   end
 
-  def charge_description(quantity,type,name,address,email)
-    "Order for #{ quantity } #{ type } for #{ name } to #{ address } and you can email him at #{ email }"
+  def charge_description(quantity,selection,name,address,email)
+    "Order for #{ quantity } #{ selection } for #{ name } to #{ address } and you can email him at #{ email }"
   end
 
   def create_transaction(params)
     email = params[:email]
     address = params[:address]
-    type = params[:type]
+    selection = params[:selection]
     name = params[:name]
     quantity = params[:quantity]
     value = charge_amount(quantity)
-    Transaction.new(is_paid: false, description: charge_description(quantity,type,name,address,email),  value: value)
+    Transaction.new(is_paid: false, description: charge_description(quantity,selection,name,address,email),  value: value)
   end
 end

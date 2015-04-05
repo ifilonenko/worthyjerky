@@ -38,7 +38,7 @@ class OrderTest < ActiveSupport::TestCase
       },
       created: 1428145937, 
       livemode: false, 
-      type: "card",
+      selection: "card",
       object: "token", 
       used: false 
     }
