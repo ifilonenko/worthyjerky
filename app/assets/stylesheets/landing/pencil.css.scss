@@ -1575,17 +1575,20 @@ p {
     -webkit-background-size: 350px auto;
     -moz-background-size: 350px auto;
     background-size: 350px auto;
-    padding-top: 150px;
+    padding-top: 200px;
 }
 .steps-section .step-one h3 {
-    background-image: url("https://mail.google.com/mail/u/0/?ui=2&ik=5e12947f52&view=fimg&th=14c88141c750af22&attid=0.2&disp=inline&realattid=ii_14c88138d1f342c2&safe=1&attbid=ANGjdJ-bHyZKBc1xrdoV0nS6urbAfSgVurC6bgDoJmqFc3w9kSGMBLHIa4WGA0-RcF69LS-Ip3L6a82y3hpgWXdy46vpSJU5GuI64n0pym_SNrLNmKqd3OeoDlxqmtQ&ats=1428296130775&rm=14c88141c750af22&zw&sz=w1412-h685");
+    background-image: url("http://i.imgur.com/tiiv2HO.png?1");
+    padding-left:2em;
     // background: url("https://mail.google.com/mail/u/0/?ui=2&ik=5e12947f52&view=fimg&th=14c88141c750af22&attid=0.2&disp=emb&realattid=ii_14c88138d1f342c2&attbid=ANGjdJ8cdFfBxWk3EWUYXs9xnuQvhVcfYWP2eTfadffRpj17jj_LBSUkDYKYPFgz5bBdYWyVAENb4rvHnM1HXtVyg_9aZtUg0EpTfPtd5ish2JPfnsVdjJNKDyU7BJA&sz=w1062-h638&ats=1428296130774&rm=14c88141c750af22&zw&atsh=1");
 }
 .steps-section .step-two h3 {
-    background-image: url("https://mail.google.com/mail/u/0/?ui=2&ik=5e12947f52&view=fimg&th=14c88141c750af22&attid=0.3&disp=inline&realattid=ii_14c881391f47c014&safe=1&attbid=ANGjdJ9MvsjLolXZwtk9hnQrwTaScC_8MFkMD6sU5k5ge-LMfrqOWZ6Mi5e7vvkBEy7uAhiu5Mpo_FUKllxRpirFkO8VlcM2HeCyIKOC3eQ-2wFGGP2DgNrL7-PM92k&ats=1428296130775&rm=14c88141c750af22&zw&sz=w1412-h685");
+    padding-left:3em;
+    background-image: url("http://i.imgur.com/lD8e8LZ.png?1");
 }
 .steps-section .step-three h3 {
-    background-image: url("https://mail.google.com/mail/u/0/?ui=2&ik=5e12947f52&view=fimg&th=14c88141c750af22&attid=0.1&disp=inline&realattid=ii_14c88138fca6041b&safe=1&attbid=ANGjdJ8KTfwyzYeWgzmVE8dVLg_BblfFSGiqC6BAZaIslq0tQvtHAhfgsC-RRymqnZ5Bq6cNWLMg_i8uflxHOZRm8ykZmflLDOpqQQu0f0TXbknBvRRF7gldo9sGQQk&ats=1428296130775&rm=14c88141c750af22&zw&sz=w1412-h685");
+    padding-left:2.5em;
+    background-image: url("http://i.imgur.com/cXGJzp0.png?1");
 }
 .steps-section.section .copy.large .title {
     color: #66615b;
@@ -1661,7 +1664,7 @@ p {
 }
 }@media screen and (min-width:37.5em) {
     .steps-section {
-    padding-top: 100px;
+    // padding-top: 100px;
 }
 .steps-section .step-list {
     display: block;
@@ -1694,8 +1697,8 @@ p {
 }
 }@media screen and (min-width:56.25em) {
     .steps-section {
-    padding-top: 150px;
-    padding-bottom: 100px;
+    // padding-top: 150px;
+    // padding-bottom: 100px;
 }
 .steps-section .step-list {
     display: block;
@@ -2154,7 +2157,7 @@ a.sdk-img {
     margin-left: 26.25%;
     margin-right: 26.25%}
 }.order-section {
-    background-color: #fffcf5;
+    background-color: #EEE;
     color: #403d39;
     padding-bottom: 0;
     overflow: hidden;
