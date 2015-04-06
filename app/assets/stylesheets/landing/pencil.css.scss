@@ -1050,10 +1050,11 @@ p {
     margin-left: 2.5%;
     margin-right: 2.5%;
     width: 45%;
-    margin-left: 27.5%;
     line-height: 1.4;
     padding-left: 0;
     padding-top: 10px;
+  width: 15% !important;
+  margin-left: 0 !important;
 }
 .craft-section .pencil-crafted .part-desc span {
     font-size: 1.125em;
@@ -1187,6 +1188,7 @@ p {
     font-size: 16px;
     margin-left: 1.6666666666666667%;
     margin-right: 1.6666666666666667%;
+    margin-top:7.5em;
     width: 30%}
 .craft-section .pencil-crafted .part-desc {
     display: inline-block;
@@ -1226,7 +1228,7 @@ p {
     margin-left: 1.25%;
     margin-right: 1.25%;
     width: 22.5%;
-    margin-left: 13.75%;
+    margin-left: 20.75%;
 }
 .craft-section .pencil-crafted .part-desc {
     display: inline-block;
@@ -1345,6 +1347,12 @@ p {
 }
 .no-backgroundsize .pencil-form-section {
     height: 750px;
+}
+.parts{
+    width:20%;
+}
+.parts-desc{
+    display:inline-block;
 }
 .pencil-form-section .copy {
     display: inline-block;
