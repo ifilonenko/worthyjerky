@@ -627,8 +627,7 @@ p {
     margin-left: 13.75%;
     margin-right: 13.75%}
 }.feature-section {
-    background: #fefbf5;
-    background-position: 84% 100%;
+    background: #FFF;
     background-repeat: no-repeat;
     border-top: 1px solid #f1eae0;
     color: #66625b;
@@ -636,10 +635,13 @@ p {
 .feature-section .wrapper {
     display: block;
     font-size: 0;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
     margin-left: -5%;
     margin-right: -5%;
     width: 110%}
 .feature-section .copy {
+    padding-top:0px !important;
     display: inline-block;
     font-size: 16px;
     margin-left: 5%;
@@ -671,25 +673,36 @@ p {
     top: 0;
 }
 .feature-section.surface-pressure-section {
-    background-image: url("http://i.imgur.com/j6E44l1.jpg?1");
+    background-image: url("http://i.imgur.com/XomrXIW.jpg?1");
+    padding-top:0px !important;
+    background-size: 100% auto;
 }
 .no-backgroundsize .feature-section.surface-pressure-section {
     background-image: none;
 }
 .feature-section.palm-rejection-section {
     background-image: url("http://www.fiftythree.com/assets/images/pencil/example-palm-rejection.jpg");
+    background-size: 100% auto;
 }
 .no-backgroundsize .feature-section.palm-rejection-section {
     background-image: none;
 }
 .feature-section.erase-section {
-    background-image: url("http://www.fiftythree.com/assets/images/pencil/example-erase.jpg");
+    background-image: url("http://i.imgur.com/bWVrJCU.jpg?1");
+    padding-top:0px !important;
+    padding-bottom:0px !important;
+    background-size: 100% auto;
+    background-position: 100% 50% !important;
 }
 .no-backgroundsize .feature-section.erase-section {
     background-image: none;
 }
 .feature-section.blend-section {
-    background-image: url("http://www.fiftythree.com/assets/images/pencil/example-blend.jpg");
+    padding-top:10px !important;
+    padding-bottom:15px !important;
+    background-image: url("http://i.imgur.com/cPs8lCE.jpg?1");
+    background-size: 100% auto;
+    background-position: 100% 10% !important;
 }
 .no-backgroundsize .feature-section.blend-section {
     background-image: none;
@@ -716,25 +729,21 @@ p {
     padding-bottom: 300px;
 }
 .backgroundsize .feature-section.surface-pressure-section .feature-icon {
-    background-position: 50% -698px;
 }
 .backgroundsize .feature-section.palm-rejection-section {
     padding-bottom: 300px;
 }
 .backgroundsize .feature-section.palm-rejection-section .feature-icon {
-    background-position: 50% -118px;
 }
 .backgroundsize .feature-section.erase-section {
     padding-bottom: 290px;
 }
 .backgroundsize .feature-section.erase-section .feature-icon {
-    background-position: 50% -235px;
 }
 .backgroundsize .feature-section.blend-section {
     padding-bottom: 330px;
 }
 .backgroundsize .feature-section.blend-section .feature-icon {
-    background-position: 50% 0;
 }
 @media screen and (min-width:28.125em) {
     .backgroundsize .feature-section {
