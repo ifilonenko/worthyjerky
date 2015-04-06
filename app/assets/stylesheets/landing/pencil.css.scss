@@ -532,7 +532,11 @@ p {
     color: #66625b;
 }
 .expression-section {
-  // background-image: url("https://cornell.app.box.com/representation/file_version_8065161300/image_2048/1.png");
+  background-image: url("https://files.slack.com/files-pri/T04181EQP-F04925074/jerky_hands.png");
+  -webkit-background-size: 500px auto;
+  -moz-background-size: 500px auto;
+  background-size: 500px auto;
+  padding-top: 300px;
 }
 .expression-section .wrapper {
     display: block;
@@ -667,7 +671,7 @@ p {
     top: 0;
 }
 .feature-section.surface-pressure-section {
-    background-image: url("http://www.fiftythree.com/assets/images/pencil/example-surface-pressure.jpg");
+    background-image: url("https://mail.google.com/mail/u/0/?ui=2&ik=5e12947f52&view=fimg&th=14c8072422dff32d&attid=0.1&disp=inline&realattid=ii_14c806cee13e8411&safe=1&attbid=ANGjdJ-CJ5rbZKMJ_tLrT5D9lBIdQ6s5qS8YiJ_mwAMwRRNs-IYfGzXER79nfuDABZAg8cob9Pi-AUzoashpZXaKT-zmQOMCGs3N1YpBGf3UOaugkhtjMMY962cTPuI&ats=1428296130813&rm=14c8072422dff32d&zw&sz=w1412-h685");
 }
 .no-backgroundsize .feature-section.surface-pressure-section {
     background-image: none;
