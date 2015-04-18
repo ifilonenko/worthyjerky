@@ -19,7 +19,8 @@ Product = React.createClass
       size: '1.6oz', 
       title: 'Classic with a tangy twist', 
       price: '4.75', 
-      image: 'http://i.imgur.com/BUEmydM.png?1'
+      image: 'http://i.imgur.com/BUEmydM.png?1',
+      both: false
     }
   addCheckoutError: (err) ->
     errors = @state.checkoutErrors
@@ -54,14 +55,19 @@ Product = React.createClass
       $('#finishCheckoutDisabled').hide()
       return
     full_address = @state.address + ', ' + @state.city + ', ' + @state.state + ', ' + @state.zip + ', ' + 'United States'
+    if @state.both 
+      @selection = 'Spicy BBQ and Citrus BBQ'
+    else
+      @selection = @state.type
     params = {
       token: response.id,
       email: @state.userEmail,
       address: full_address,
-      selection: @state.type,
+      selection: @selection,
       name: @state.name,
       quantity: @state.count
     }
+    console.log(params)
     $.ajax({
       type: 'POST'
       url: '/transactions'
@@ -104,6 +110,11 @@ Product = React.createClass
   spicy: ->
     @setState({ type: 'Citrus BBQ', size: '1.6oz', title: 'Classic with a tangy twist', price: '4.75', image: 'http://i.imgur.com/BUEmydM.png?1' })
   count: (e)->
+    console.log(e.target.value)
+    if e.target.value == '6b'
+      @setState({ both: true })
+    else
+      @setState({ both: false })
     value = parseInt(e.target.value)
     shipping = 0
     unitCost = 4.75
@@ -284,13 +295,16 @@ Product = React.createClass
                                   children: 'Select Value'                                
                                 React.DOM.option
                                   value: '1'
-                                  children: '1'
+                                  children: '1 - ' + @state.type
                                 React.DOM.option
                                   value: '3'
-                                  children: '3'
+                                  children: '3 - ' + @state.type
                                 React.DOM.option
                                   value: '6'
-                                  children: '6'
+                                  children: '6 - ' + @state.type
+                                React.DOM.option
+                                  value: '6b'
+                                  children: '6 - Spicy + Citrus'
                               ]
                             React.DOM.div
                               className: 'div-container'
