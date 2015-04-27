@@ -4,6 +4,14 @@ Rails.application.routes.draw do
   resources :transactions 
   post '/transactions' => 'transactions#create'
   resources :orders
+
+  # constraints subdomain: 'orders' do
+  #   get '/' => 'orders#root'
+  #   post '/login' => 'orders#login'
+  #   get '/home' => 'orders#home'
+  #   get '/changepass' => 'orders#change_password'
+  #   post '/changepass' => 'orders#set_new_password'
+  end
   
 
   # The priority is based upon order of creation: first created -> highest priority.

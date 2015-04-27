@@ -11,6 +11,7 @@
 #  updated_at     :datetime         not null
 #  name           :string
 #  email          :string
+#  completed      :boolean
 #
 
 require 'test_helper'

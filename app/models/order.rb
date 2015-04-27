@@ -11,6 +11,7 @@
 #  updated_at     :datetime         not null
 #  name           :string
 #  email          :string
+#  completed      :boolean
 #
 
 class Order < ActiveRecord::Base
@@ -24,7 +25,8 @@ class Order < ActiveRecord::Base
       selection: self.selection,
       address: self.address,
       name: self.name,
-      email: self.email
+      email: self.email,
+      completed: self.completed
     )
   end
 
