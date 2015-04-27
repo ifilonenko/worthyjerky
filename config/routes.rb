@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   #   get '/home' => 'orders#home'
   #   get '/changepass' => 'orders#change_password'
   #   post '/changepass' => 'orders#set_new_password'
-  end
+  # end
   
 
   # The priority is based upon order of creation: first created -> highest priority.
