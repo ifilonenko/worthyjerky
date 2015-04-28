@@ -64,7 +64,7 @@ class Transactor
     p params
     p '---------'
     p transaction
-    Order.new(transaction_id: transaction.id, quantity: params[:quantity], address: params[:address], email: params[:email], selection: params[:selection], name: params[:name], completed: false)
+    Order.create(transaction_id: transaction.id, quantity: params[:quantity], address: params[:address], email: params[:email], selection: params[:selection], name: params[:name], completed: false)
   end
 
   def charge_description(quantity,selection,name,address,email)

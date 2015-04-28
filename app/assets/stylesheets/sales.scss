@@ -1,0 +1,143 @@
+// Place all the styles related to the sales controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+// Place all the styles related to the touring controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "shared";
+
+#touringNav {
+  left: 0;
+  padding: 2rem 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+#logo {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 3rem;
+  font-weight: 300;
+  position: relative;
+  img {
+    border-right: 1px solid rgba(255, 255, 255, 0.4);
+    display: inline-block;
+    position: relative;
+    top: -4px;
+  }
+}
+#touringSession {
+  text-align: right;
+  .btn-outline {
+    margin: 0 0.5rem;
+  }
+}
+.Wander {
+  background: image-url('desert.jpg') no-repeat;
+  bottom: 0;
+  @include vendor-prefix(background-size, cover);
+  left: 0;
+  right: 0;
+  top: 0;
+  position: absolute;
+  > .WanderDarken {
+    background: rgba(0, 0, 0, 0.3);
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    // z-index: -1;
+  }
+}
+#wanderHeading {
+  color: white;
+  font-size: 5rem;
+  font-weight: 700;
+  margin: 12rem auto 4rem auto;
+  text-align: center;
+  text-shadow: 0 0.08em 0.05em rgba(0, 0, 0, 0.5);
+}
+#tourRegisterForm, #signupSuccess, #signupFail {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 0.5rem;
+  padding: 1.5em;
+  input, button {
+    font-size: 1em;
+    width: 100%;
+  }
+  p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.8rem;
+    text-align: center;
+    &:first-child {
+      margin-bottom: 1.5em;
+    }
+    &:last-child {
+      margin-top: 1.5em;
+    }
+  }
+}
+#signupSuccess {
+  display: none;
+  position: relative;
+  z-index: 1;
+  strong {
+    color: white;
+  }
+}
+#signupFail {
+  display: none;
+  position: relative;
+  z-index: 1;
+  a {
+    color: white;
+    font-weight: 700;
+  }
+}
+#signupSuccessCheck {
+  background: transparentize($green, 0.3);
+  border: 1px solid $green;
+  border-radius: 1em;
+  color: white;
+  display: inline-block;
+  margin-right: 0.5em;
+  padding: 0.5em;
+  width: 2em;
+}
+#signupFailX {
+  background: transparentize($red, 0.3);
+  border: 1px solid $red;
+  border-radius: 1em;
+  color: white;
+  display: inline-block;
+  margin-right: 0.5em;
+  padding: 0.5em;
+  width: 2em;
+}
+#learnMoreContainer {
+  margin-top: 2rem;
+  text-align: center;
+}
+#learnMore {
+  border: none;
+  color: white;
+  padding: 1.2rem;
+  position: relative;
+  @include vendor-prefix(transition, background 0.25s);
+  z-index: 1;
+  > p {
+    margin-bottom: 0;
+  }
+  &:hover {
+    background: rgba(255, 255, 255, 0.12) !important;
+  }
+}
+
+#content {
+  border-radius: 0.25em;
+  box-shadow: 0 0 7px 1px rgba(0, 0, 0, 0.15);
+  margin: 1em auto;
+  overflow: hidden;
+}

@@ -1,0 +1,22 @@
+<% ias = is_active_session %>
+<% dark_header = false unless defined? dark_header %>
+<% character = active_session_character %>
+<nav id='nav' role='navigation' class='<%= 'Dark' if dark_header %>'>
+  <div class='container'>
+    <div class='row'>
+      <a class='pull-left' id='brandLink' href='/'>Tune<span id='nameHighlight'>tap</span></a>
+      <div class='pull-right'>
+        <% if character.blank? %>
+          <button type='button' class='btn btn-primary btn-outline navbar-btn', id='signupButton', data-toggle='modal', data-target='#signup' data-ref='Header signup'>Sign up</button>
+        <% else %>
+          <div class='btn-group'>
+            <p class='btn btn-default navbar-btn btn-outline btn-white' id='profileLink'><%= character.name %></p>
+          </div>
+          <%= link_to "Log out", signout_path, :id => "logoutButton", :class => "btn btn-default navbar-btn btn-outline btn-white"  %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</nav>
+<%= render 'shared/signup' %>
+<%= render 'shared/login' %>

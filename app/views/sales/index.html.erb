@@ -1,0 +1,41 @@
+<%= render 'shared/header' %>
+<main class='Wander'>
+  <div class='WanderDarken'></div>
+  <div class='container'>
+    <div class='row'>
+      <div class='col-xs-12'>
+        <h1 id='wanderHeading'>Stop wandering. Start playing.</h1>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2'>
+        <form class='row' id='tourRegisterForm' method='POST' action='/artists-express'> 
+          <p class='col-xs-12'>Tunetap is a set of tools to find show locations, engage your fans, and easily organize events.</p>
+          <div class='form-group col-xs-12 col-md-4'>
+            <input class='form-control input-lg' placeholder='Email address' name='user[email]' id='signupEmail' />
+          </div>
+          <div class='form-group col-xs-12 col-md-4'>
+            <input class='form-control input-lg' placeholder='Artist name' name='artist[artist_name]' />
+          </div>
+          <div class='form-group col-xs-12 col-md-4'>
+            <button type='button' class='btn btn-primary btn-lg' id='signupButton'>Signup for free</button>
+            <button type='button' class='btn btn-primary btn-lg Hidden' disabled='disabled' id='signupSpinner'><span class='fa fa-spin fa-spinner'></span></button>
+          </div>
+          <p class='col-xs-12'>Tunetap is free to use for as long as you want.</p>
+        </form>
+        <div class='row' id='signupSuccess'>
+          <p class='col-xs-12'>
+            <span class='fa fa-check' id='signupSuccessCheck'></span>
+            You're signed up! Check your email (<strong id='emailOutput'></strong>) to get started.
+          </p>
+        </div>
+        <div class='row' id='signupFail'>
+          <p class='col-xs-12'>
+            <span class='fa fa-times' id='signupFailX'></span>
+            We're sorry, something went wrong. Would you mind trying again, or <a href='mailto:thetap@tunetap.com'>letting us know about the issue</a>?
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
