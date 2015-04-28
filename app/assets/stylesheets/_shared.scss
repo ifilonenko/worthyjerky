@@ -270,7 +270,7 @@ $FBDarkBlue: #2E589C;
 }
 
 #nav {
-  @include filter-gradient(#a60000, #000000, vertical); // IE6-9
+  // @include filter-gradient(#a60000, #000000, vertical); // IE6-9
   @include background-image(linear-gradient(top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.33) 50%,rgba(0,0,0,0) 100%));
   font-size: 1rem;
   font-weight: 300;
