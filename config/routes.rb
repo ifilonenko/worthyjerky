@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  root 'static_pages#index'
   get '/shop' => 'shop#index'
   resources :transactions 
   post '/transactions' => 'transactions#create'
@@ -12,6 +11,8 @@ Rails.application.routes.draw do
     get '/signout' => 'sessions#destroy', as: :signout
     get '/inventory' => 'sales#show'
   end
+
+  root 'static_pages#index'
   
 
   # The priority is based upon order of creation: first created -> highest priority.
